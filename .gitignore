@@ -4,5 +4,8 @@
 # Ignore osmnx/cache
 cache/
 
+# Ignore geojsons to save space
+*.geojson
+
 # Ignore Python cache
 __pycache__/
