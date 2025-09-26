@@ -127,19 +127,26 @@ def extract_for_provinces(provinces_list, tags_dict, output_root_folder="osm_hel
         prov_clean = clean_name(prov)
         folder = os.path.join(output_root_folder, prov_clean)
         print(f"\n=== Extracting for region: {prov_clean}===\n")
-        extract_amenities_for_place(prov_clean, tags_dict, folder)
+        extract_amenities_for_place(prov, tags_dict, folder)
 
 
 if __name__ == "__main__":
     tags = {
         "amenity": [
             "school", "university", "hospital", "clinic", "restaurant", "cafe", "library", "police",
-            "post_office", "bank", "bar", "marketplace", "market", "theatre", "cinema", "dentist", "childcare"
+            "post_office", "bank", "bar", "marketplace", "market", "theatre", "cinema", "dentist", "childcare",
+            "college", "nursing_home", "pharmacy", "doctors", "place_of_worship", "grave_yard", "parking", "fast_food",
+            "fire_station", "theatre", "ferry_terminal", "waste_dump_site", "waste_transfer_station"
         ],
-        "leisure": ["park", "garden", "sports_centre", "stadium", "swimming_pool", "track", "playground", "picnic_site", "gym"],
+        "leisure": ["park", "garden", "sports_centre", "stadium", "swimming_pool", "track", "playground", "picnic_site", "gym",
+                   "community_centre", "arts_centre", "music_venue", "nightclub", "nature_reserve", "fitness_centre",
+                   "golf_course", "sports_hall", "dog_park", "water_park", "miniature_golf", "ice_rink", "sauna", "resort", 
+                   "bowling alley", "recreation_ground"],
         "shop": ["supermarket", "mall", "department_store", "clothes", "bookstore", "bakery", "butcher"],
+        "public_transport": ["station", "platform", "subway_entrance", "stop_position"],
         "highway": ["bus_stop"],
         "railway": ["station"],
+        "landuse": ["cemetery"],
         "natural": ["water", "wood", "beach"],
         "tourism": ["hotel", "museum", "viewpoint", "attraction"]
     }
