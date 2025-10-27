@@ -66,15 +66,15 @@ def extract_amenities_for_place(place_name, tags_dict, output_folder):
     # Save whole combined data in geojson and csv
     place_short = clean_name(query_place)
 
-    combined_fname_geo = f"{place_short}_all_amenities.geojson"
-    combined_path_geo = os.path.join(output_folder, combined_fname_geo)
-    try:
-        os.makedirs(os.path.dirname(combined_path_geo) or output_folder, exist_ok=True)
-        gdf_all.to_file(combined_path_geo, driver="GeoJSON")
-    except Exception as e:
-        print(f"[ERROR] saving combined geojson: {e}")
+    #combined_fname_geo = f"{place_short}_all_amenities.geojson"
+    #combined_path_geo = os.path.join(output_folder, combined_fname_geo)
+    #try:
+    #    os.makedirs(os.path.dirname(combined_path_geo) or output_folder, exist_ok=True)
+    #    gdf_all.to_file(combined_path_geo, driver="GeoJSON")
+    #except Exception as e:
+    #    print(f"[ERROR] saving combined geojson: {e}")
 
-    combined_fname_csv = combined_fname_geo.replace(".geojson", ".csv")
+    combined_fname_csv = f"{place_short}_all_amenities.csv"
     combined_path_csv = os.path.join(output_folder, combined_fname_csv)
     try:
         os.makedirs(os.path.dirname(combined_path_csv) or output_folder, exist_ok=True)
@@ -103,15 +103,15 @@ def extract_amenities_for_place(place_name, tags_dict, output_folder):
             continue
 
         tag_short = clean_name(key)
-        fname_geojson = f"{place_short}_{tag_short}.geojson"
-        path_geojson = os.path.join(output_folder, fname_geojson)
-        try:
-            os.makedirs(os.path.dirname(path_geojson) or output_folder, exist_ok=True)
-            subset.to_file(path_geojson, driver="GeoJSON")
-        except Exception as e:
-            print(f"[ERROR] Saving subset geojson for {key}: {e}")
+        #fname_geojson = f"{place_short}_{tag_short}.geojson"
+        #path_geojson = os.path.join(output_folder, fname_geojson)
+        #try:
+        #    os.makedirs(os.path.dirname(path_geojson) or output_folder, exist_ok=True)
+        #    subset.to_file(path_geojson, driver="GeoJSON")
+        #except Exception as e:
+        #    print(f"[ERROR] Saving subset geojson for {key}: {e}")
 
-        fname_csv = fname_geojson.replace(".geojson", ".csv")
+        fname_csv = f"{place_short}_{tag_short}.csv"
         path_csv = os.path.join(output_folder, fname_csv)
         try:
             os.makedirs(os.path.dirname(path_csv) or output_folder, exist_ok=True)
@@ -122,7 +122,7 @@ def extract_amenities_for_place(place_name, tags_dict, output_folder):
     return gdf_all
 
 
-def extract_for_provinces(provinces_list, tags_dict, output_root_folder="osm_helper_data"):
+def extract_for_provinces(provinces_list, tags_dict, output_root_folder="osm_helper_data2"):
     for prov in provinces_list:
         prov_clean = clean_name(prov)
         folder = os.path.join(output_root_folder, prov_clean)
@@ -152,12 +152,10 @@ if __name__ == "__main__":
     }
 
     provinces = [
-        "Greater Vancouver, British Columbia",
-        "Calgary, Alberta",
-        "Edmonton, Alberta",
-        "Toronto, Ontario",
-        "Ottawa, Ontario"
+        #"British Columbia, Canada",
+        "Alberta, Canada"
+       # "Ontario, Canada"
     ]
 
-    output_folder = "osm_helper_data"
+    output_folder = "osm_helper_data2"
     extract_for_provinces(provinces, tags, output_folder)
