@@ -9,3 +9,9 @@ cache/
 
 # Ignore Python cache
 __pycache__/
+
+# Ignore venv
+.venv/
+
+# misc
+.idea/
