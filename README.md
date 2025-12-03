@@ -1,1 +1,29 @@
-# 459_project
+# Analyzing Rent Data in Alberta
+
+## Datasets
+Our datasets are found under the /datasets folder. In the preprocessing phase, 
+the datasets required are "rentfaster.csv" and all the files under 
+"osm_helper_data_Alberta", we join these tables into a "dataset_joined.csv". 
+Afterward, we perform data cleaning on this file 
+and create a "dataset_cleaned.csv" which we will use for the remainder of the pipeline.
+
+## Set up environment
+```
+pip install -r requirements.txt
+```
+to install our notebook dependencies
+
+Our main dependencies are matplotlib (3.10.7), scikit-learn (1.7.2), pandas(2.3.3), all on the latest versions
+
+## EDA and Preprocessing
+This stage of our pipeline can be found in the jupyter notebook file "EDA_Preprocessing.ipynb".
+To run this notebook, run the following command
+```
+jupyter notebook EDA_Preprocessing.ipynb
+```
+## Classification, Clustering, Outlier Detection
+This stage of our pipeline can be found in the jupyter notebook file under "<ERIC_UPDATE_THIS>.ipynb".
+To run this notebook, run the following command
+```
+jupyter notebook <ERIC_UPDATE_THIS>.ipynb
+```
