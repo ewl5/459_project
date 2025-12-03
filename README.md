@@ -21,9 +21,9 @@ To run this notebook, run the following command
 ```
 jupyter notebook EDA_Preprocessing.ipynb
 ```
-## Classification, Clustering, Outlier Detection
-This stage of our pipeline can be found in the jupyter notebook file under "<ERIC_UPDATE_THIS>.ipynb".
+## Primary Notebook
+The next stage of our pipeline consisting of Classification, Clustering, Outlier Detection, can be found in the primary jupyter notebook file under "final.ipynb", which combines both the EDA and Preprocessing stage with the Classification, Clustering, Outlier Detection stage in one notebook.
 To run this notebook, run the following command
 ```
-jupyter notebook <ERIC_UPDATE_THIS>.ipynb
+jupyter notebook final.ipynb
 ```
